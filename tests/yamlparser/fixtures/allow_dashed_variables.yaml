@@ -1,0 +1,12 @@
+- project:
+    name: allow_dashed_variables
+    jobs:
+      - allow_dashed_variables:
+          is-disabled: true
+          my-var: 1
+
+- job-template:
+    name: 'allow_dashed_variables'
+    disabled: '{obj:is-disabled}'
+    builders:
+      - shell: 'echo {my-var}'
